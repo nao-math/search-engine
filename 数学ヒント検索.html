@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>数学ヒント検索</title> 
+<style> 
+body { font-family: メイリオ, sans-serif; margin: 20px;background-color:#FFCCCC; } 
+h1 {color:blue;}
+p {color:gray;}
+input {font-size:22px; color:gray;border-radius:10px;}
+button {background-color:lightblue;color:black; border:none; border-radius: 10px; font-size:22px;cursor:pointer;} </style> 
+</head> 
+<body>
+ <h1>数学ヒント検索 </h1>
+<p>下の欄に、意味を知りたい用語や解き方のキーワードを入力しよう</p>
+ <input type="text" id="search" placeholder="検索キーワードを入力"> 
+<button onclick="search()">検索</button> 
+<div id="results"></div>
+ <script> 
+const databace = [
+ { keyword:[ "一次関数の式"，"傾き"，"切片"]，url: https://drive.google.com/1qdAllaFcSSE6RzcLxUV2W6bEIPlFpKz8},
+ { title: "一次関数2", content: "一次関数の求め方　基本①", tags: ["傾き", "１点"，"座標"] }, ]; 
+function search() { 
+const keyword = document.getElementById("search").value.toLowerCase(); 
+const results = data.filter(item => item.title.toLowerCase().includes(keyword) || item.content.toLowerCase().includes(keyword) ); const resultDiv = document.getElementById("results"); resultDiv.innerHTML = results.length > 0 ? results.map(item => `<div><h3>${item.title}</h3><p>${item.content}</p></div>`).join("") : "<p>該当する結果が見つかりませんでした。</p>"; }
+ </script>
+ </body> 
+</html>
